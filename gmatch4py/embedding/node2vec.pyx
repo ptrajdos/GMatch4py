@@ -10,6 +10,11 @@ cimport cython
 from joblib import Parallel, delayed
 import networkx as nx
 
+try:
+    np_int = np.int
+except AttributeError:
+    np_int = np.int_
+
 class Graph():
     def __init__(self, nx_G, is_directed, p, q):
         self.G = nx_G
@@ -126,7 +131,7 @@ def alias_setup(probs):
     '''
     K = len(probs)
     q = np.zeros(K)
-    J = np.zeros(K, dtype=np.int)
+    J = np.zeros(K, dtype=np_int)
 
     smaller = []
     larger = []

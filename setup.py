@@ -85,4 +85,4 @@ if f:
         shutil.rmtree("build")
     if os.path.exists("dist"):
         shutil.rmtree("dist")
-    os.system("find . -name \*.c -delete ; find . -name \*.cpp -delete ;")
+    os.system("find ./gmatch4py -name \*.c -delete ; find ./gmatch4py -name \*.cpp -delete ;")
